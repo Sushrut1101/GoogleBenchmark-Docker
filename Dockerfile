@@ -14,7 +14,6 @@ RUN git clone https://github.com/google/benchmark.git /tmp/benchmark
 WORKDIR /tmp/benchmark
 RUN cmake -E make_directory "build"
 RUN cmake -E chdir "build" cmake -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on -DCMAKE_BUILD_TYPE=Release ../
-RUN cmake --build "build" --config Release
 RUN cmake --build "build" --config Release --target install
 
 # Cleanup
