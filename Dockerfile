@@ -6,7 +6,7 @@ RUN dnf install -y \
     git cmake neovim nano \
     sudo nano
 
-RUN dnf group install \
+RUN dnf group install -y \
     c-development development-tools
 
 # Compile benchmark
