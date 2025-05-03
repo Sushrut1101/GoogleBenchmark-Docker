@@ -10,7 +10,7 @@ RUN dnf group install -y \
     c-development development-tools
 
 # Compile benchmark
-RUN git clone https://github.com/google/benchmark.git /tmp/benchmark    
+RUN git clone --depth=1 https://github.com/google/benchmark.git /tmp/benchmark    
 WORKDIR /tmp/benchmark
 RUN cmake -E make_directory "build"
 RUN cmake -E chdir "build" cmake -DBENCHMARK_DOWNLOAD_DEPENDENCIES=on -DCMAKE_BUILD_TYPE=Release ../
